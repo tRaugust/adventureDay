@@ -16,11 +16,15 @@ const pick = async (req, res) => {
     
     if (process.env.CUSTOM_STRATEGY) {
 
-        console.log('Custom Stratetgy :: against ' + player1Name + ',  ctx: ' + req.body);
+        console.log('Custom Stratetgy check :: against ' + player1Name + ',  turn: ' + turn);
         // TODO: implement custom arcade intelligence here, see also ./GameBot/README.md for sample requests    
-        if (player1Name == "Kye" && turn == 0) {
+        if (player1Name == "Kye" && turn > 0) {
             strategyOption = "CUSTOM";
-            result.text = "rock";
+            var prevTurnKyeMove = req.body.TurnsPlayer1Values[0];
+            console.log('Custom Stratetgy  :: against ' + player1Name + ',  prev turn: ' + prevTurnKyeMove);
+            
+            //result.text = "rock";
+            
         }
     }    
 
