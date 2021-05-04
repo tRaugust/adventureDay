@@ -11,8 +11,8 @@ const pick = async (req, res) => {
         return;
     }
 
-    const strategyOption = process.env.PICK_STRATEGY || "RANDOM";
-    const result = pickFromStrategy(strategyOption);
+    var strategyOption = process.env.PICK_STRATEGY || "RANDOM";
+    var result = pickFromStrategy(strategyOption);
     
     if (process.env.CUSTOM_STRATEGY) {
 
