@@ -10,8 +10,6 @@ name: Build and Push GameBot
 on:
   push:    
     # deactivated for now - has to be enabled by team
-    branches-ignore:
-      - '**'
     
     #branches: [ master ]
     #paths:
@@ -38,5 +36,5 @@ jobs:
     # build the docker image
     - name: build and push    
       run: |
-        az acr build --image "gamebot:latest" --registry myContainerRegistry --file Dockerfile .
+        az acr build --image "gamebot:latest" --registry vaderacr512115 --file Dockerfile .
 
