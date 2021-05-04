@@ -23,7 +23,7 @@ const pick = async (req, res) => {
             var prevTurnKyeMove = req.body.TurnsPlayer1Values[0];
             console.log('Custom Stratetgy  :: against ' + player1Name + ',  prev turn: ' + prevTurnKyeMove);
             
-            //result.text = "rock";
+            result.text = "rock";
             
         }
     }    
