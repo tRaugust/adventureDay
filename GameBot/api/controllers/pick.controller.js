@@ -13,6 +13,8 @@ const pick = async (req, res) => {
 
     const strategyOption = process.env.PICK_STRATEGY || "RANDOM";
     const result = pickFromStrategy(strategyOption);
+    console.log('TR:: against ' + player1Name + ',  ctx: ' + req.body);
+
 
     // TODO: implement custom arcade intelligence here, see also ./GameBot/README.md for sample requests    
     // if (player1Name == "Dud" && turn == 0) {
