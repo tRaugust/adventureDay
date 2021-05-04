@@ -13,14 +13,16 @@ const pick = async (req, res) => {
 
     const strategyOption = process.env.PICK_STRATEGY || "RANDOM";
     const result = pickFromStrategy(strategyOption);
-    console.log('TR:: against ' + player1Name + ',  ctx: ' + req.body);
+    
+    if (process.env.CUSTOM_STRATEGY) {
 
-
-    // TODO: implement custom arcade intelligence here, see also ./GameBot/README.md for sample requests    
-    // if (player1Name == "Dud" && turn == 0) {
-    //    strategyOption = "CUSTOM";
-    //    result.text = "rock";
-    // }
+        console.log('Custom Stratetgy :: against ' + player1Name + ',  ctx: ' + req.body);
+        // TODO: implement custom arcade intelligence here, see also ./GameBot/README.md for sample requests    
+        if (player1Name == "Kye" && turn == 0) {
+            strategyOption = "CUSTOM";
+            result.text = "rock";
+        }
+    }    
 
     console.log('Against ' + player1Name + ', strategy ' + strategyOption + '  played ' + result.text);
 
