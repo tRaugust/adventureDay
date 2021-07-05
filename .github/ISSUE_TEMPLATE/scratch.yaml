@@ -1,0 +1,38 @@
+name: Create Account
+description: Create a new NewRelic Account for your product under the CARIAD root account
+title: "[New Account]: Create a new NewRelic Account"
+labels: ['New Account']
+assignees:
+  - hschipke
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please fill out the form with your details to get your account created!
+  - type: input
+    id: contact
+    attributes:
+      label: Account owner email
+      description: What is the designated account owner email address?
+      placeholder: ex. email@example.com
+    validations:
+      required: true
+  - type: input
+    id: account-name
+    attributes:
+      label: Account name
+      description: What is the project name that shall be part of the Account identifier?
+      placeholder: WePrepare
+    validations:
+      required: true
+  - type: dropdown
+    id: region
+    attributes:
+      label: Region for Account
+      description: for which regin shall the caccount be created?
+      options:
+        - EU
+        - US
+        - BOTH
+      validations:
+      required: true
